@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "ES5",
+    "outDir": "dist",
+    "rootDir": "src",
+    "types": ["node", "mocha", "chai", "puppeteer"],
+    "sourceMap": true
+  },
+  "include": ["src/**/*.ts"],
+  "exclude": [
+      "node_modules"
+  ]
+}

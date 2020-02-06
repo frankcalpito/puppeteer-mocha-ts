@@ -1,0 +1,22 @@
+{
+    "chromeWebSecurity": false,
+    "baseUrl": "http://ol-app-njs-cog-test-01-rs.cognera.com:8014",
+    "projectId": "fusion-cypress",
+    "env": {
+      "name": "fusion-tst",
+      "fusion-tst": {
+        "username": "cli_user",
+        "password": "HUD-RLM-TEST_cli_user1"
+      },
+      "fusion-dev": {
+        "username": "cli_user",
+        "password": "Fus1on_cli_user"
+      },
+      "fusion-demo": {
+        "username": "cli_user",
+        "password": "HUD-RLM-TEST_cli_user1",
+        "typeDelay": 100
+      }
+    }
+  }
+  
