@@ -1,2 +1,3 @@
 # puppeteer-mocha
-puppeteer-mocha-chai
+Puppeteer and Mocha
+Chai for Assertion
