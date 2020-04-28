@@ -6,6 +6,9 @@ declare global {
             navigator: Navigator;
             browser: any;
             expect: any;
+            page: any;
+            done: any;
+            timeout: any;
         } 
     }
 }

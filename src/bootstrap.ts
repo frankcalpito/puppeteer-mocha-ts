@@ -1,27 +1,32 @@
-import * as puppeteer from 'puppeteer';
+const puppeteer = require('puppeteer');
 const { expect } = require('chai');
 const _ = require('lodash');
-
-/* create the global variable by using lodash function */
 const globalVariables = _.pick(global, ['browser', 'expect']);
 
-/* configurable options or object for puppeteer */
+let browser, page;
+
+// TODO: change to config
+let width = 1440;
+let height = 900;
+
+// puppeteer options
 const opts = {
     headless: false,
     slowMo: 100,
-    timeout: 0,
-    args: ['--start-maximized', '--window-size=1920,1080'] 
-}
+    args: ['--start-maximized', `--window-size=${width},${height}`]
+};
 
-/* call the before for puppeteer for execute this code before start testing */
-before (async () => {
-  global.expect = expect;
-  global.browser = await puppeteer.launch(opts);
+// expose variables
+before(async function () {
+    global.expect = expect;
+    global.browser = await puppeteer.launch(opts);
 });
 
-/* call the function after puppeteer done testing */
-after ( () => {
-  // global.browser.close();
-  global.browser = globalVariables.browser;
-  global.expect = globalVariables.expect;
+// close browser and reset global variables
+after(function () {
+    // don't close for now
+    // global.browser.close();
+
+    global.browser = globalVariables.browser;
+    global.expect = globalVariables.expect;
 });

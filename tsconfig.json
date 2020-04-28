@@ -17,7 +17,16 @@
       "noFallthroughCasesInSwitch": true,
       "allowUnreachableCode": false,
       "types": ["node", "puppeteer", "mocha"],
-      "typeRoots": ["node_modules/@types", "./src/typings"]
+      "typeRoots": ["node_modules/@types", "./src/typings"],
+      "plugins": [
+        {
+          "name": "typescript-tslint-plugin",
+          "alwaysShowRuleFailuresAsWarnings": false,
+          "ignoreDefinitionFiles": true,
+          "configFile": "s./tslint.json",
+          "suppressWhileTypeErrorsPresent": false
+        }
+      ]
   },
   "include": [
     "src",

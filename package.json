@@ -4,17 +4,21 @@
   "description": "Puppeteer, Mocha, Typescript",
   "main": "test/index.js",
   "scripts": {
-    "test": "mocha --recursive --ui bdd test",
+    "test": "mocha build/bootstrap.js --recursive build/tests/**/*.spec.js --ui bdd --timeout 0",
     "lint": "tslint --fix src/**/*.ts",
-    "build": "tsc --outDir test",
-    "build:clean": "rimraf test && tsc --outDir test",
-    "build:watch": "tsc -w --outDir test"
+    "build": "tsc --outDir build",
+    "build:clean": "rimraf build && tsc --outDir build",
+    "build:watch": "tsc -w --outDir build"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/frankcalpito/puppeteer-mocha.git"
   },
-  "keywords": ["Puppeteer", "Mocha", "Typescript"],
+  "keywords": [
+    "Puppeteer",
+    "Mocha",
+    "Typescript"
+  ],
   "author": "Franklin Calpito Jr.",
   "license": "ISC",
   "bugs": {
@@ -30,10 +34,12 @@
     "@types/node": "^13.7.0",
     "@types/puppeteer": "^2.0.1",
     "chai": "^4.2.0",
+    "codelyzer": "^5.2.2",
+    "lodash": "^4.17.15",
     "mocha": "^7.0.1",
     "puppeteer-tsd": "0.0.2",
     "rimraf": "^3.0.1",
-    "typescript": "3.6.4",
-    "lodash": "^4.17.15"
+    "tslint": "^6.1.2",
+    "typescript": "3.6.4"
   }
 }
